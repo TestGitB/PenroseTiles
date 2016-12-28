@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.wxy.tiling">
+
+    <uses-feature android:name="android.software.live_wallpaper"/>
+    <application
+        android:name=".PenroserApp"
+        android:backupAgent=".PenroserBackupAgent"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:restoreAnyVersion="true">
+        <activity
+            android:name=".PenroserActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="penroser.com"
+                    android:pathPrefix="/preference"
+                    android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="penroser"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="penroser"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data
+                    android:host="penroser.com"
+                    android:pathPrefix="/preference"
+                    android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PenroserColorOptions"
+            android:label="@string/choose_colors"/>
+        <activity android:name=".PenroserColorPicker"/>
+        <activity
+            android:name=".PenroserWallpaperOptions"
+            android:exported="true"/>
+        <activity android:name=".PenroserGallery"/>
+
+        <service
+            android:name=".PenroserLiveWallpaper"
+            android:label="VectorTiling"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/penroser"/>
+        </service>
+        <meta-data
+            android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAIZXp-cuYWz3NfODzq6nxF-XZNpVLoFnXYu7Me3g"/>
+    </application>
+</manifest> 

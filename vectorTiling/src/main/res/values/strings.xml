@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VectorTiling</string>
+    <string name="description">An infinitely scrolling penrose tiling</string>
+    <string name="full_screen">Toggle Full Screen</string>
+    <string name="options">Options</string>
+    <string name="choose_colors">Choose Colors</string>
+    <string name="ok">OK</string>
+    <string name="edit_color">Edit Color</string>
+    <string name="copy_color">Copy Color</string>
+    <string name="paste_color">Paste Color</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="make_copy">Make Copy</string>
+    <string name="set_wallpaper">Set as Wallpaper</string>
+    <string name="share_color_scheme">Share color scheme</string>
+    <string name="share">Share</string>
+</resources>

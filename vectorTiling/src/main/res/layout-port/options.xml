@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:jf="http://schemas.android.com/apk/res-auto"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:color/black">
+
+    <LinearLayout
+        android:id="@+id/rhombi"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:orientation="horizontal">
+
+        <com.wxy.tiling.HalfRhombusButton
+            android:id="@+id/left_skinny"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="2"
+            jf:type="@integer/left_skinny"/>
+
+        <com.wxy.tiling.HalfRhombusButton
+            android:id="@+id/right_skinny"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="2"
+            jf:type="@integer/right_skinny"/>
+
+        <com.wxy.tiling.HalfRhombusButton
+            android:id="@+id/left_fat"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dip"
+            android:layout_weight="1"
+            jf:type="@integer/left_fat"/>
+
+        <com.wxy.tiling.HalfRhombusButton
+            android:id="@+id/right_fat"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            jf:type="@integer/right_fat"/>
+    </LinearLayout>
+
+    <com.wxy.tiling.PenroserGLView
+        android:id="@+id/penroser_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/rhombi"/>
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/ok"/>
+</RelativeLayout>
