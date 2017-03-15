@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="click_tips">点击四个三角形改变配色</string>
+    <string name="current">当前\n划动选择其他</string>
+</resources>

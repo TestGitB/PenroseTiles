@@ -27,51 +27,27 @@
  ~ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                xmlns:picker="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
+    <com.github.danielnilsson9.colorpickerview.view.ColorPickerView
+        android:id="@+id/color_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        picker:alphaChannelVisible="false"/>
 
-        <Gallery
-            android:id="@+id/gallery"
-            android:layout_width="fill_parent"
-            android:layout_height="0dip"
-            android:layout_weight="35"
-            android:paddingBottom="5dip"
-            android:paddingTop="5dip"
-            android:spacing="10dip"/>
+    <com.wxy.livewall.penrose.PenroserGLView
+        android:id="@+id/penroser_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/color_picker"/>
 
-        <com.wxy.livewall.penrose.PenroserGLView
-            android:id="@+id/penroser_view"
-            android:layout_width="fill_parent"
-            android:layout_height="0dip"
-            android:layout_weight="65"/>
-    </LinearLayout>
-
-    <LinearLayout
+    <Button
+        android:id="@+id/ok"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-        <Button
-            android:id="@+id/edit"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/edit"
-            android:textColor="@android:color/white"/>
-
-        <Button
-            android:id="@+id/ok"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/ok"
-            android:textColor="@android:color/white"/>
-    </LinearLayout>
+        android:text="@string/ok"
+        android:textColor="@android:color/white"/>
 </RelativeLayout>
